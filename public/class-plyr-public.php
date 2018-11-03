@@ -73,7 +73,7 @@ class Plyr_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plyr, plugin_dir_url( __FILE__ ) . 'css/plyr-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plyr, 'https://cdn.plyr.io/3.4.5/plyr.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,9 +96,9 @@ class Plyr_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plyr, plugin_dir_url( __FILE__ ) . 'js/plyr.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plyr, 'https://cdn.plyr.io/3.4.5/plyr.js', array(), $this->version, false );
 
-		wp_enqueue_script( $this->plyr . '-public', plugin_dir_url( __FILE__ ) . 'js/plyr-public.js', array( $this->plyr, 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plyr . '-public', plugin_dir_url( __FILE__ ) . 'js/plyr-public.js', array( $this->plyr ), $this->version, false );
 
 	}
 
@@ -114,21 +114,21 @@ class Plyr_Public {
 		if ( !$provider || false === $data = $wp_oembed->fetch( $provider, $url, $args ) )
 			return false;
 
-		if( 'video' !== $data->type )
+		if ( 'video' !== $data->type )
 			return $html;
 
-		if( !in_array( $data->provider_name, array( 'Vimeo', 'YouTube' ) ) )
+		if ( !in_array( $data->provider_name, array( 'Vimeo', 'YouTube' ) ) )
 			return $html;
 
-		if( $data->provider_name == 'YouTube' ) {
+		if ( $data->provider_name == 'YouTube' ) {
 			$splode = array_reverse( explode('/', $data->thumbnail_url) );
 
 			$video_id = $splode[1];
-		}else{
+		} else {
 			$video_id = $data->video_id;
 		}
 
-		return '<div data-video-id="'.$video_id.'" data-type="'.strtolower($data->provider_name).'"></div>';
+		return '<div class="js-plyr" data-plyr-provider="'.strtolower($data->provider_name).'" data-plyr-embed-id="'.$video_id.'"></div>';
 	}
 
 }

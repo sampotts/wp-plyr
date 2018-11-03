@@ -7,9 +7,9 @@
  * @package           Plyr
  *
  * @wordpress-plugin
- * Plugin Name:       WP Plyr
+ * Plugin Name:       Plyr
  * Plugin URI:        https://github.com/drrobotnik/plyr/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Use the Plyr player for your HTML5, YouTube and Vimeo videos
  * Version:           1.0.1
  * Author:            Brandon Lavigne
  * Author URI:        https://github.com/drrobotnik/

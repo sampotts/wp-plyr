@@ -1,5 +1,5 @@
 === Plyr ===
-Contributors: drrobotnik, sam_potts, selz
+Contributors: drrobotnik, sam_potts
 Tags: oembed, embed, video, player, skin, plyr, youtube, vimeo
 Requires at least: 3.8
 Donate Link: https://caavadesign.com
