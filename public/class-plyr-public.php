@@ -105,7 +105,7 @@ class Plyr_Public {
 	public function embed_oembed_html( $html, $url, $attr, $post_ID ) {
 
 		$args = array();
-		include_once ABSPATH . WPINC . '/class-oembed.php';
+		include_once ABSPATH . WPINC . '/class-wp-oembed.php';
 
 		$wp_oembed = new WP_oEmbed();
 
